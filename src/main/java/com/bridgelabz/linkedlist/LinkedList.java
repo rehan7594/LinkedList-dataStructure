@@ -1,7 +1,17 @@
 package com.bridgelabz.linkedlist;
 
 public class LinkedList {
-	public static void main(String[] args) {
-		System.out.println("Welcome to My Linked List");
+	Node head;
+
+	class Node {
+
+		int data;
+		Node next;
+
+		Node(int data){
+			this.data = data;
+			next =  null;
+		}
 	}
 }
+
