@@ -1,12 +1,14 @@
 package com.bridgelabz.linkedlist;
 
 public class LinkedListUtil {
+
 	public static  void main(String[] args) {
 		LinkedList linkedlist = new LinkedList();
 		linkedlist.push(70);
 		linkedlist.push(30);
 		linkedlist.push(56);
 
+		//To delete first element in the LinkedList
 		linkedlist.printList();
 		System.out.println("\n Head Element before pop: "+ linkedlist.topValue());
 
@@ -19,17 +21,21 @@ public class LinkedListUtil {
 		linkedlist1.append(30);
 		linkedlist1.append(56);
 
-
+		//To delete last element in the LinkedList
+		System.out.println("\nLinkedList before poplast:");
 		linkedlist1.printList();
 
+		((LinkedList) linkedlist1).poplast();
+		System.out.println("\nLinkedList after poplast:");
+		linkedlist1.printList();
+
+		//To insert 30  between 56 and 70
 		LinkedList linkedlist2 = new LinkedList();
 		linkedlist2.append(56);
-		linkedlist2.append(40);
 		linkedlist2.append(70);
 
-		linkedlist2.insertAfter(linkedlist2.head.next, 30);
-		linkedlist2.printList();
-
-
+		linkedlist2.insertAfter(linkedlist2.head, 30);
+		System.out.println("\n");
+		linkedlist2.printList();	
 	}
 }

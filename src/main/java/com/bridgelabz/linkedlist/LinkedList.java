@@ -74,4 +74,19 @@ class LinkedList {
 		head=(head).next;	 	 
 	}
 
+	public void poplast() {
+		if (head == null) {
+			System.out.println("head should not be null");
+		}  
+		if(head.next == null) {
+			System.out.println("null");
+		}
+
+		Node secondlast = head; 
+		secondlast = secondlast.next;
+
+		secondlast.next = null;	 
+
+	}
+
 }
