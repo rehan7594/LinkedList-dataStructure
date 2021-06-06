@@ -46,4 +46,14 @@ class LinkedList {
 		last.next=newNode;
 	}
 
+	public void insertAfter(Node prevNode, int data) {
+		if(prevNode==null) {
+			System.out.println("Previous node should not be null");
+		}
+
+		Node newNode = new Node(data);
+		newNode.next = prevNode.next;
+		prevNode.next = newNode;
+	}
+
 }

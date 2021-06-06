@@ -16,6 +16,14 @@ public class LinkedListUtil {
 		linkedlist1.append(56);
 
 		linkedlist1.printList();
+		System.out.println("\n");
 
+		LinkedList linkedlist2 = new LinkedList();
+		linkedlist2.append(56);
+		linkedlist2.append(40);
+		linkedlist2.append(70);
+
+		linkedlist2.insertAfter(linkedlist2.head.next, 30);
+		linkedlist2.printList();
 	}
 }
