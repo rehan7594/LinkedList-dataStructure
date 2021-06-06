@@ -12,6 +12,10 @@ class LinkedList {
 			this.data = data;
 			next =  null;
 		}
+		@Override
+		public String toString() {
+			return "Node (data="+data+"next"+ next+")";  
+		}
 	}
 
 	public void push (int data) {
@@ -74,7 +78,10 @@ class LinkedList {
 		head=(head).next;	 	 
 	}
 
-	public void poplast() {
+	public Node poplast() {
+
+		Node res=null;
+
 		if (head == null) {
 			System.out.println("head should not be null");
 		}  
@@ -82,11 +89,62 @@ class LinkedList {
 			System.out.println("null");
 		}
 
-		Node secondlast = head; 
-		secondlast = secondlast.next;
+		Node secondlast = head;
+		while(secondlast.next.next != null)
+			secondlast = secondlast.next;
 
+		res=secondlast.next;
 		secondlast.next = null;	 
-
+		return res;	 
 	}
 
+	public LinkedList deletebyKey(LinkedList linkedlist2, int key) {
+		Node currNode=linkedlist2.head;
+		Node prev=null;
+
+		if (currNode != null && currNode.data == key) {
+			linkedlist2.head=currNode.next;
+			return linkedlist2;
+		}
+
+		while(currNode != null && currNode.data != key) {
+			prev = currNode;
+			currNode = currNode.next;
+		}	  
+
+		if (currNode != null) {
+			prev.next =currNode.next;
+		}
+
+		if (currNode == null) {
+			System.out.println(key+ "not found");
+		}
+
+		return linkedlist2;
+	}
+
+	public void searchByKey(int data) {
+		boolean flag=false;
+		int index = 1;
+		Node temp = head;
+
+		if(head == null) {
+			System.out.println("List is empty");
+		}
+
+		else {
+			while(temp != null) {
+				if(temp.data == data) {
+					flag=true;
+					break;
+				}
+				index++;
+				temp = temp.next;
+			}
+		}
+		if(flag)
+			System.out.println("Element present at the position:"+index);
+		else
+			System.out.println("Element not present");
+	}
 }
