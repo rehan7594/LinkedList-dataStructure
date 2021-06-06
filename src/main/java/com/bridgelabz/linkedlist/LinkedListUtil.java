@@ -8,15 +8,19 @@ public class LinkedListUtil {
 		linkedlist.push(56);
 
 		linkedlist.printList();
-		System.out.println("\n");
+		System.out.println("\n Head Element before pop: "+ linkedlist.topValue());
+
+		linkedlist.pop();
+		linkedlist.printList();
+		System.out.println("\n Head Element after pop: "+ linkedlist.topValue());
 
 		LinkedList linkedlist1 = new LinkedList();
 		linkedlist1.append(70);
 		linkedlist1.append(30);
 		linkedlist1.append(56);
 
+
 		linkedlist1.printList();
-		System.out.println("\n");
 
 		LinkedList linkedlist2 = new LinkedList();
 		linkedlist2.append(56);
@@ -25,5 +29,7 @@ public class LinkedListUtil {
 
 		linkedlist2.insertAfter(linkedlist2.head.next, 30);
 		linkedlist2.printList();
+
+
 	}
 }

@@ -56,4 +56,22 @@ class LinkedList {
 		prevNode.next = newNode;
 	}
 
+	public boolean isEmpty() {
+		return head == null;
+	} 
+
+	public int topValue() {
+		if(!isEmpty()) 
+			return head.data; 
+		else
+			return 0;
+	}
+
+	public void pop() {
+		if (head == null) {
+			System.out.println("head should not be null");
+		}
+		head=(head).next;	 	 
+	}
+
 }
